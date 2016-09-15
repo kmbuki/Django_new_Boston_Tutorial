@@ -38,7 +38,6 @@ class IndexView(generic.ListView):
     template_name = 'music/index.html'
     context_object_name = 'album_list'
 
-    @profile
     def get_queryset(self):
         return Album.objects.all()
 
@@ -49,3 +48,4 @@ class DetailView(generic.DetailView):
 class AlbumCreate(CreateView):
     model = Album
     fields = ['artist', 'album_title', 'genre', 'album_logo']
+    template_name = 'music/create_album.html'
