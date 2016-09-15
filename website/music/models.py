@@ -1,15 +1,13 @@
 from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
-
 from django.db import models
-from django.core.urlresolvers import reverse
 
 
 class Album(models.Model):
     artist = models.CharField(max_length=255)
     album_title = models.CharField(max_length=500)
     genre = models.CharField(max_length=200)
-    album_logo = models.CharField(max_length=1000)
+    album_logo = models.FileField()
 
 
     def get_absolute_url(self):
